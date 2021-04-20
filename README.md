@@ -15,7 +15,6 @@ for example, ` bg-gray-900 bgp-topography-.5-gray-700`
 ## Patterns
 
 The following patterns are available:
-* fourPointStars
 * anchorsAway
 * architect
 * autumn
@@ -49,6 +48,7 @@ The following patterns are available:
 * floatingCogs
 * floorTile
 * formalInvitation
+* fourPointStars
 * glamorous
 * graphPaper
 * groovy
