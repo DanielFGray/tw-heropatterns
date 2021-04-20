@@ -1,14 +1,16 @@
 # heropatterns
 
-[tailwindcss](https://tailwindcss.com) plugins for dynamically generating [heropatterns](https//heropatterns.com)
+[tailwindcss](https://tailwindcss.com) plugin for dynamically generating [heropatterns](https//heropatterns.com)
 
 ## Usage
+
+> currently there's no npm packages available to install
 
 ```
 bgp-[pattern]-[opacity]-[color]
 ```
 
-for example, `bgp-topography-.5-gray-700 bg-gray-900`
+for example, ` bg-gray-900 bgp-topography-.5-gray-700`
 
 ## Patterns
 
