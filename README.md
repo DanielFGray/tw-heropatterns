@@ -24,7 +24,8 @@ for example
 
 ## Patterns
 
-The following patterns are available:
+All of the patterns in [heropatterns](http://heropatterns.com) should be available in this plugin in camelCased form:
+
 * anchorsAway
 * architect
 * autumn
