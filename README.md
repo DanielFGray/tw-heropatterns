@@ -11,6 +11,29 @@
 
 This plugin leverages the new experimental JIT engine in Tailwind to only generate the patterns with the given opacity and color that you use in your classes, without generating unused combinations.
 
+## Install
+
+If you don't have a `tailwind.config.js` file, generate one with:
+
+```sh
+npx tailwind init
+# or
+yarn tailwind init
+```
+
+Enable the JIT mode and add the plugin to the list:
+
+```js
+module.exports = {
+  mode: "jit",
+  purge: [...], // purge is required for jit to work
+  plugins: [
+    //...
+    require("@danielfgray/tw-heropatterns"),
+  ]
+}
+```
+
 ## Usage
 
 ```
@@ -18,7 +41,7 @@ bgp-[pattern]-[opacity]-[color]
 ```
 
 for example
-```
+```html
 <div class="bg-gray-900 bgp-topography-.5-gray-700">
 ```
 
