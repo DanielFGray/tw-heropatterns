@@ -1,6 +1,6 @@
 {
   "name": "@danielfgray/tw-heropatterns",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "tailwindcss jit plugin for dynamically generating heropatterns",
   "main": "tailwind-heropatterns.js",
   "scripts": {
