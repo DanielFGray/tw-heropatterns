@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/DanielFGray/tailwind-heropatterns/issues"
   },
-  "homepage": "https://github.com/DanielFGray/tailwind-heropatterns#readme"
+  "homepage": "https://github.com/DanielFGray/tailwind-heropatterns#readme",
+  "peerDependencies": {
+    "tailwindcss":"^2.1"
+  }
 }
