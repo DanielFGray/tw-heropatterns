@@ -2,8 +2,6 @@
 
 [tailwindcss](https://tailwindcss.com) plugin for dynamically generating [heropatterns](http://heropatterns.com)
 
-> [currently](https://github.com/DanielFGray/tailwind-heropatterns/issues/1) there's no npm packages available to install
-
 ## Why?
 
 * **[heropatterns](http://heropatterns.com)** created by Steve Schoeger is a dynamic web app which allows the user to interactively pick the colors for a pattern and then copy/paste into their project. It's fantastic, but opening up the browser and picking the colors and opacity isn't as nice as just writing a CSS class.
@@ -12,6 +10,14 @@
 This plugin leverages the new experimental JIT engine in Tailwind to only generate the patterns with the given opacity and color that you use in your classes, without generating unused combinations.
 
 ## Install
+
+Install it from npm using your package manager of choice, for example:
+
+```sh
+npm install tailwindcss @danielfgray/tw-heropatterns
+# or
+yarn add tailwindcss @danielfgray/tw-heropatterns
+```
 
 If you don't have a `tailwind.config.js` file, generate one with:
 
