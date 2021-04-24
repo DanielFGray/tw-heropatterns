@@ -4,7 +4,7 @@
 
 ## Why?
 
-* **[heropatterns](http://heropatterns.com)** created by Steve Schoeger is a dynamic web app which allows the user to interactively pick the colors for a pattern and then copy/paste into their project. It's fantastic, but opening up the browser and picking the colors and opacity isn't as nice as just writing a CSS class.
+* **[heropatterns](http://heropatterns.com)** created by Steve Schoger is a dynamic web app which allows the user to interactively pick the colors for a pattern and then copy/paste into their project. It's fantastic, but opening up the browser and picking the colors and opacity isn't as nice as just writing a CSS class.
 * **[tailwind-heropatterns](https://github.com/AndreaMinato/tailwind-heropatterns)** is a Tailwind plugin that lets you define specific heropatterns and colors in a Tailwind config file and then generates all the possible combinations you could use, later to be purged but will still be added to the stylesheet and parsed by the browser during development, and bigger CSS files start to slow down browser development tools.
 
 This plugin leverages the new experimental JIT engine in Tailwind to only generate the patterns with the given opacity and color that you use in your classes, without generating unused combinations.
