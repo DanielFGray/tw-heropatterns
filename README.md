@@ -1,4 +1,4 @@
-# tailwind-heropatterns
+# tw-heropatterns
 
 [tailwindcss](https://tailwindcss.com) plugin for dynamically generating [heropatterns](http://heropatterns.com)
 
