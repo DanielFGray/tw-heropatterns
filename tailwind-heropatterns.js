@@ -1,19 +1,19 @@
-const plugin = require('tailwindcss/plugin')
-const {nameClass} = require('tailwindcss/jit/pluginUtils')
 const patterns = require('./heropatterns')
 
-module.exports = plugin(function HeroPatterns({ matchUtilities, theme }) {
-  matchUtilities({
-    bgp: (modifier) => {
-      const [name, opacity, ...colorParts] = modifier.split('-')
-      const color = theme(['colors', ...colorParts])
-      if (!patterns[name] || !color || !opacity) return []
-      const pattern = patterns[name]({ opacity, color })
-      return {
-        [nameClass('bgp', modifier)]: {
-          backgroundImage: `url('data:image/svg+xml,${encodeURIComponent(pattern)}')`
-        }
-      }
+module.exports = function HeroPatterns({ matchUtilities, variants, theme }) {
+  Object.keys(patterns).forEach(name => matchUtilities(
+    {
+      [`bgp-${name}`]: (parts) => {
+        let [color, opacity = 1] = parts.split(',')
+          color = theme(`colors.${color}`, color)
+        const pattern = patterns[name]({ color, opacity })
+        return { backgroundImage: `url('data:image/svg+xml,${encodeURIComponent(pattern)}')` }
+      },
+    },
+    {
+      values: theme('heroPatterns.colors', {}),
+      variants: variants('heroPatterns', Object.keys(patterns)),
+      type: 'any',
     }
-  })
-})
+  ))
+}

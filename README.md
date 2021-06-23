@@ -2,6 +2,8 @@
 
 [tailwindcss](https://tailwindcss.com) plugin for dynamically generating [heropatterns](http://heropatterns.com)
 
+> *Warning:* This plugin depends on experimental and undocumented features of Tailwind, the API is subject to change between versions.
+
 ## Why?
 
 * **[heropatterns](http://heropatterns.com)** created by Steve Schoger is a dynamic web app which allows the user to interactively pick the colors for a pattern and then copy/paste into their project. It's fantastic, but opening up the browser and picking the colors and opacity isn't as nice as just writing a CSS class.
@@ -22,9 +24,9 @@ yarn add tailwindcss @danielfgray/tw-heropatterns
 If you don't have a `tailwind.config.js` file, generate one with:
 
 ```sh
-npx tailwind init
+npx tailwindcss init --jit
 # or
-yarn tailwind init
+yarn tailwindcss init --jit
 ```
 
 Enable the JIT mode and add the plugin to the list:
@@ -43,12 +45,19 @@ module.exports = {
 ## Usage
 
 ```
-bgp-[pattern]-[opacity]-[color]
+bgp-patternName-[color,opacity]
 ```
 
 for example
 ```html
-<div class="bg-gray-900 bgp-topography-.5-gray-700">
+<div class="bg-gray-900 bgp-topography-[gray.700,.5]">
+```
+
+`opacity` is optional, and defaults to `1`, so the following are the equivalent:
+
+```
+bgp-floatingCogs-[gray.700,1]
+bgp-floatingCogs-[gray.700]
 ```
 
 ## Design Limitations
