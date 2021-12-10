@@ -1,6 +1,6 @@
 {
   "name": "@danielfgray/tw-heropatterns",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "tailwindcss jit plugin for dynamically generating heropatterns",
   "main": "./tailwind-heropatterns.js",
   "scripts": {
@@ -10,13 +10,17 @@
     "type": "git",
     "url": "git+https://github.com/DanielFGray/tw-heropatterns.git"
   },
-  "keywords": ["tailwindcss", "tailwindcss-plugin", "heropatterns"],
+  "keywords": [
+    "tailwindcss",
+    "tailwindcss-plugin",
+    "heropatterns"
+  ],
   "author": "DanielFGray <DanielFGray@gmail.com>",
   "bugs": {
     "url": "https://github.com/DanielFGray/tw-heropatterns/issues"
   },
   "homepage": "https://github.com/DanielFGray/tw-heropatterns#readme",
   "peerDependencies": {
-    "tailwindcss":"^2.2"
+    "tailwindcss": "^2.2"
   }
 }
