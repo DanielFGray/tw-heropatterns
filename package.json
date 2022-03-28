@@ -21,6 +21,6 @@
   },
   "homepage": "https://github.com/DanielFGray/tw-heropatterns#readme",
   "peerDependencies": {
-    "tailwindcss": ">=2.2 <3.0.0"
+    "tailwindcss": ">=2.2 >=3.0.0"
   }
 }
