@@ -1,19 +1,36 @@
-const patterns = require('./heropatterns')
+import patterns from './heropatterns.js'
 
-module.exports = function HeroPatterns({ matchUtilities, variants, theme }) {
-  Object.keys(patterns).forEach(name => matchUtilities(
-    {
-      [`bgp-${name}`]: (parts) => {
-        let [color, opacity = 1] = parts.split(',')
-          color = theme(`colors.${color}`, color)
-        const pattern = patterns[name]({ color, opacity })
-        return { backgroundImage: `url('data:image/svg+xml,${encodeURIComponent(pattern)}')` }
-      },
-    },
-    {
-      values: theme('heroPatterns.colors', {}),
-      variants: variants('heroPatterns', Object.keys(patterns)),
-      type: 'any',
+function flattenColors(colors, prefix = '') {
+  const result = {}
+  for (const [key, value] of Object.entries(colors)) {
+    const name = prefix ? `${prefix}-${key}` : key
+    if (typeof value === 'string') {
+      result[name] = value
+    } else if (typeof value === 'object' && value !== null) {
+      if (value.DEFAULT) result[name] = value.DEFAULT
+      Object.assign(result, flattenColors(value, name))
     }
-  ))
+  }
+  return result
+}
+
+export default function ({ matchUtilities, theme }) {
+  const colors = flattenColors(theme('colors') ?? {})
+
+  for (const name of Object.keys(patterns)) {
+    matchUtilities(
+      {
+        [`bgp-${name}`]: (color, { modifier }) => {
+          const opacity = modifier ? modifier / 100 : 1
+          const svg = patterns[name]({ color, opacity })
+          return { 'background-image': `url('data:image/svg+xml,${encodeURIComponent(svg)}')` }
+        },
+      },
+      {
+        type: 'any',
+        values: colors,
+        modifiers: 'any',
+      },
+    )
+  }
 }
